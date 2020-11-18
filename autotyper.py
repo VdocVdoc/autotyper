@@ -2,6 +2,8 @@ from pynput.keyboard import Key, Controller
 import time
 
 keyboard = Controller()
+
+"""Time to go to application for typing."""
 time.sleep(2)
 
 """Don't change this"""
