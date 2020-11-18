@@ -4,7 +4,7 @@ import time
 keyboard = Controller()
 time.sleep(2)
 
-
+"""Don't change this"""
 def enter():
     keyboard.press(Key.enter)
     keyboard.release(Key.enter)
