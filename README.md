@@ -32,13 +32,13 @@ dep = '$dep all'
 `
 
 The meat of the script. Starts a while true loop and runs forever.
-`
+```
 def main():
     count = 0
     try:
 
         while True:
-        `
+        ```
         This is used to count the amount of loops. Yes, I could do enumerate.
             count += 1
         `
