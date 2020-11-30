@@ -2,40 +2,53 @@ from pynput.keyboard import Key, Controller
 import time
 
 keyboard = Controller()
+time.sleep(5)
 
-"""Time to go to application for typing."""
-time.sleep(2)
-
-"""Don't change this"""
 def enter():
     keyboard.press(Key.enter)
     keyboard.release(Key.enter)
 
-
-to_be_typed = '-b'
-to_be_typed_2 = '$dep all'
-
 def main():
     count = 0
+    word1 = str(input("Enter a word to be typed: "))
+    word2 = str(input("Enter a second word to be typed: "))
+    delay = int(input("Enter delay between words (seconds): "))
+    restartdelay = int(input("Enter delay between full loop (seconds): "))
+    print('Starting in 5 seconds. Move to text bar for typer to work.')
     try:
-
-        while True:
-            """COUNTS THE AMOUNT OF TIMES THE COMMAND HAS LOOPED"""
-            count += 1
-            """Types first command and then enters it. After it does the second command."""
-            print('Typing...')
-            keyboard.type(to_be_typed)
-            enter()
-            time.sleep(0.8)
-            print(f'Looped {count} times!')
-            """Second command is not needed"""
-            keyboard.type(to_be_typed_2)
-            enter()
-            print('Done\n------------------')
-            """TO PREVENT WARNINGS: A 60 SECOND COOLDOWN. Can be disabled with a comment."""
-            time.sleep(60)
-
+        
+        if word2 == None:
+            count = 0
+            while True:
+                count += 1
+                print('Typing...')
+                keyboard.type(word1)
+                enter()
+                print(f'Looped {count} times!')
+                time.sleep(restartdelay)
+        elif delay == None:
+            count = 0
+            while True:
+                count += 1
+                print('Typing...')
+                keyboard.type(word1)
+                enter()
+                print(f'Looped {count} times!')
+                time.sleep(restartdelay)
+        else:
+            while True:
+                count += 1
+                print('Typing...')
+                keyboard.type(word1)
+                enter()
+                time.sleep(delay)
+                keyboard.type(word2)
+                enter()
+                print(f'Looped {count} times!')
+                time.sleep(restartdelay)
+                
     except Exception as e:
         print(e)
-       
-main()
+
+if __name__ == '__main__':
+    main()
