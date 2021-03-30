@@ -10,7 +10,7 @@ Install `pynput` with `pip install pynput`
 
 How do you run this?
 
-Download python from thier website: https://www.python.org/downloads/
+Download python from their website: https://www.python.org/downloads/
 
 Create a file called whatever with externsion .py
 
